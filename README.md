@@ -40,4 +40,34 @@ https://rötgängertötgänger-8080.app.github.dev # example
 https://rötgängertötgänger-8080.app.github.dev/actuator # example
 ```
 
-![alt text](./resources/images/demo_actuator.png)   
+![alt text](./resources/images/demo_actuator.png)
+
+7. Add the following code to the `DemoApplication.java`:
+
+```java
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@SpringBootApplication
+@RestController
+public class DemoApplication {
+
+	@GetMapping("/")
+	public String hello(){
+		return "DO NOT REDEEM THE CARD!";
+	}
+
+	public static void main(String[] args) {
+		SpringApplication.run(DemoApplication.class, args);
+	}
+
+}
+```
+
+8. Use the `Terminal` and go to the actual website:
+
+```bash
+mvn spring-boot:run
+```
+
+
